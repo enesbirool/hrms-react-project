@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from "react";
-import { Table, Header, Icon, Button, Image, Card } from "semantic-ui-react";
+import { Table, Header, Icon, Button, Image, Card, Modal, Label, Container } from "semantic-ui-react";
 import JobSeekerService from "../services/JobSeekerService";
-
+import JobSeekerDetails from "./JobSeekerDetails";
 export default function JobseekerList() {
 
+    const [open, setOpen] = React.useState(false)
     const [jobseekers, setJobSeekers] = useState([]);
     useEffect(() => {
         let jobSeekerService = new JobSeekerService();
@@ -13,11 +14,11 @@ export default function JobseekerList() {
     return (
         <div>
             <Header as="h2">
-            <Icon name="list alternate outline" />
-            <Header.Content>Job Seekers</Header.Content>
-          </Header>
-          <Table color="blue" key="blue">
-          </Table>
+                <Icon name="list alternate outline" />
+                <Header.Content>Job Seekers</Header.Content>
+            </Header>
+            <Table color="blue" key="blue">
+            </Table>
             <Card.Group>
                 {jobseekers.map((jobseeker) =>
                     <Card key={jobseeker.id}>
@@ -37,10 +38,8 @@ export default function JobseekerList() {
                             <div className='ui two buttons'>
                                 <Button basic color='green'>
                                     Mesaj
-                </Button>
-                                <Button basic color='blue'>
-                                    Detaylar
-                </Button>
+                                </Button>
+                                <JobSeekerDetails></JobSeekerDetails>
                             </div>
                         </Card.Content>
                     </Card>

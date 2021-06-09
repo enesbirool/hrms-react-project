@@ -10,6 +10,7 @@ import {
   Segment,
   Sidebar,
 } from 'semantic-ui-react'
+import CitiesList from '../pages/CitiesList'
 import Section from './Section'
 
 const HorizontalSidebar = ({ animation, direction, visible }) => (
@@ -21,8 +22,8 @@ const HorizontalSidebar = ({ animation, direction, visible }) => (
   >
   </Sidebar>
 )
-
 const VerticalSidebar = ({ animation, direction, visible }) => (
+  
   <Sidebar
     as={Menu}
     animation={animation}
@@ -32,6 +33,7 @@ const VerticalSidebar = ({ animation, direction, visible }) => (
     vertical
     visible={visible}
     width='thin'
+    color="teal"
   >
     <Menu.Item as='a' icon="labeled" vertical>
       <Icon name='user' />
@@ -45,6 +47,10 @@ const VerticalSidebar = ({ animation, direction, visible }) => (
       <Icon name='user' />
       Job Position
     </Menu.Item>
+    <Menu.Item>
+      <CitiesList></CitiesList>
+    </Menu.Item>
+    
   </Sidebar>
 )
 
@@ -71,12 +77,11 @@ function SidebarExampleTransitions() {
 
   const { animation, dimmed, direction, visible } = state
   const vertical = direction === 'bottom' || direction === 'top'
-
   return (
     <div>
       <Button className="menu"
         onClick={() =>
-          dispatch({ type: 'CHANGE_ANIMATION', animation: 'scale down' })
+          dispatch({ type: 'CHANGE_ANIMATION', animation: 'scale down'})
         }
       >
         Menu
@@ -107,5 +112,4 @@ function SidebarExampleTransitions() {
     </div>
   )
 }
-
 export default SidebarExampleTransitions
