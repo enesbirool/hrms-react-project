@@ -24,8 +24,12 @@
     <hr />
     <details>
       <summary>Project Details</summary>
-        <img src="./photos/2.PNG"></img>
-        <img src="./photos/3.PNG"></img>
+        <img src="./photos/a.PNG"></img>
+        <img src="./photos/b.PNG"></img>
+        <img src="./photos/c.PNG"></img>
+        <img src="./photos/d.PNG"></img>
+        <img src="./photos/e.PNG"></img>
+        <img src="./photos/f.PNG"></img>
     </details>
     
 <ul>
