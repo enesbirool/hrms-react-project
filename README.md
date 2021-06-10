@@ -6,15 +6,15 @@
 <ul>
     <li><b>Layouts Layer </b></li>
         <ul>
-            <li><a href='https://github.com/EnesBirol/hrms-project-react/tree/master/src/layouts'> Layouts </a>            </li>
+            <li><a href='https://github.com/EnesBirol/hrms-react-project/tree/master/src/layouts'> Layouts </a>            </li>
         </ul>
     <li><b>Pages Layer</b></li>
         <ul>
-            <li><a href='https://github.com/EnesBirol/hrms-project-react/tree/master/src/pages'> Pages </a>            </li>
+            <li><a href='https://github.com/EnesBirol/hrms-react-project/tree/master/src/pages'> Pages </a>            </li>
         </ul>
     <li><b>Services Layer </b></li>
         <ul>
-            <li><a href='./tree/master/src/services'> Services </a>            </li>
+            <li><a href='https://github.com/EnesBirol/hrms-react-project/tree/master/src/services'> Services </a>            </li>
         </ul>
             </ul> <br>
     <details>
