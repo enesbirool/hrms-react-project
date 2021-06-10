@@ -1,19 +1,33 @@
-import React from "react";
+import React, {useState} from 'react'
+import { useHistory } from 'react-router';
+import { NavLink } from 'react-router-dom';
 import { Container, Button, Menu, Icon, Dropdown, Flag } from 'semantic-ui-react';
 import "../App.css";
+import SignedIn from "./SignedIn";
+import SignedOut from "./SignedOut";
 
 export default function Navi() {
+    const [isAuthenticated, setIsAuthenticated] = useState(false)
+    const history=useHistory()
+
+   function handleSignOut(){
+        setIsAuthenticated(false)
+        history.push("/")
+   }
+   function handleSignIn(){
+    setIsAuthenticated(true)
+    }
     return (
         <div>
             <Container>
-                <Menu size="large" inverted color="teal" >
+                <Menu  color="teal" inverted>
                     <Container>
                         <Menu.Item>
                             <img src='https://react.semantic-ui.com/logo.png' />
                         </Menu.Item>
-                        <Menu.Item name="Ana Sayfa">
+                        <Menu.Item name="Ana Sayfa" as={NavLink} to="/" active>
                             <Icon name="home" />Ana Sayfa
-          </Menu.Item>
+                        </Menu.Item>
                         <Menu.Item name="ilanlar" />
                         <Menu.Item name="Belgeler" />
                         <Dropdown item text='Haberler'>
@@ -31,11 +45,7 @@ export default function Navi() {
                                     <Dropdown.Item><Flag name='turkey' />Turkish</Dropdown.Item>
                                 </Dropdown.Menu>
                             </Dropdown>
-                            <Button.Group>
-                                <Button>Giris yap</Button>
-                                <Button.Or />
-                                <Button positive>Kaydol</Button>
-                            </Button.Group>
+                            {isAuthenticated?<SignedIn signOut={handleSignOut}></SignedIn>:<SignedOut signIn={handleSignIn}></SignedOut>}
                         </Menu.Menu>
                     </Container>
                 </Menu>

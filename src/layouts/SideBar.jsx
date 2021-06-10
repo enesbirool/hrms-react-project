@@ -12,6 +12,7 @@ import {
 } from 'semantic-ui-react'
 import CitiesList from '../pages/CitiesList'
 import Section from './Section'
+import { NavLink } from 'react-router-dom'
 
 const HorizontalSidebar = ({ animation, direction, visible }) => (
   <Sidebar
@@ -35,20 +36,17 @@ const VerticalSidebar = ({ animation, direction, visible }) => (
     width='thin'
     color="teal"
   >
-    <Menu.Item as='a' icon="labeled" vertical>
+    <Menu.Item as='a' icon="labeled" vertical name="jobseeker" as={NavLink} to="/jobseekers" >
       <Icon name='user' />
       JobSeeker
     </Menu.Item>
-    <Menu.Item as='a'>
+    <Menu.Item as='a' name="employer" as={NavLink} to="/employers" >
       <Icon name='user' />
       Employeer
     </Menu.Item>
-    <Menu.Item as='a'>
+    <Menu.Item as='a' name="job position" as={NavLink} to="/jobpositions" >
       <Icon name='user' />
       Job Position
-    </Menu.Item>
-    <Menu.Item>
-      <CitiesList></CitiesList>
     </Menu.Item>
     
   </Sidebar>

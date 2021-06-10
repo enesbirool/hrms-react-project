@@ -1,39 +1,21 @@
 import React from "react";
+import { Route } from "react-router";
 import { Grid, GridColumn } from "semantic-ui-react";
-import CitiesList from "../pages/CitiesList";
-import EmployerList from "../pages/EmployerList";
-import JobAdvertList from "../pages/JobAdvertList";
-import JobPositionList from "../pages/JobPositionList";
 import JobseekerList from "../pages/JobSeekerList";
+import JobSeekerDetail from "../pages/JobSeekerDetail";
+import EmployerList from "../pages/EmployerList";
 
 export default function Section() {
   return (
     <div>
       <Grid>
         <Grid.Row>
-          <GridColumn size={14}>
-            <JobseekerList></JobseekerList>
-          </GridColumn>
-        </Grid.Row>
-        <Grid.Row>
-          <GridColumn size={14}>
-            <EmployerList></EmployerList>
-          </GridColumn>
-        </Grid.Row>
-        <Grid.Row>
-          <GridColumn size={14}>
-            <JobAdvertList></JobAdvertList>
-          </GridColumn>
-        </Grid.Row>
-        <Grid.Row>
-          <GridColumn size={14}>
-            <JobPositionList></JobPositionList>
-          </GridColumn>
-        </Grid.Row>
-        <Grid.Row>
-          <GridColumn size={14}>
-            <CitiesList></CitiesList>
-          </GridColumn>
+          <Grid.Column width={12}>
+            <Route exact path="/" component={JobseekerList} />
+            <Route exact path="/jobseekers" component={JobseekerList} />
+            <Route exact path="/jobseeker/:id" component={JobSeekerDetail} />
+            <Route exact path="/employers" component={EmployerList} />
+          </Grid.Column>
         </Grid.Row>
       </Grid>
     </div>

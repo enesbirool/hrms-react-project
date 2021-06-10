@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { Table, Header, Icon, Button, Image, Card, Modal, Label, Container } from "semantic-ui-react";
 import JobSeekerService from "../services/JobSeekerService";
-import JobSeekerDetails from "./JobSeekerDetails";
+import JobSeekerFloatCard from "./JobSeekerFloatCard";
+
 export default function JobseekerList() {
 
     const [open, setOpen] = React.useState(false)
@@ -10,6 +11,7 @@ export default function JobseekerList() {
         let jobSeekerService = new JobSeekerService();
         jobSeekerService.getJobSeekers().then((result) => setJobSeekers(result.data.data));
     }, []);
+    
 
     return (
         <div>
@@ -25,8 +27,8 @@ export default function JobseekerList() {
                         <Card.Content>
                             <Image
                                 floated='right'
-                                size='mini'
-                                src='https://react.semantic-ui.com/images/avatar/large/steve.jpg'
+                                size='medium'
+                                src={jobseeker.profileImage}
                             />
                             <Card.Header>{jobseeker.firstName} {jobseeker.lastName}</Card.Header>
                             <Card.Meta>BirthDate : {jobseeker.birthDate}</Card.Meta>
@@ -39,7 +41,7 @@ export default function JobseekerList() {
                                 <Button basic color='green'>
                                     Mesaj
                                 </Button>
-                                <JobSeekerDetails></JobSeekerDetails>
+                            <JobSeekerFloatCard name={jobseeker.firstName} lastname={jobseeker.lastName} image={jobseeker.profileImage} jobseekerId={jobseeker.id}></JobSeekerFloatCard>
                             </div>
                         </Card.Content>
                     </Card>
