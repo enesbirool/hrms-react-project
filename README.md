@@ -14,7 +14,7 @@
         </ul>
     <li><b>Services Layer </b></li>
         <ul>
-            <li><a href='https://github.com/EnesBirol/hrms-project-react/tree/master/src/services'> Services </a>            </li>
+            <li><a href='./tree/master/src/services'> Services </a>            </li>
         </ul>
             </ul> <br>
     <details>
@@ -30,6 +30,7 @@
         <img src="./photos/d.PNG"></img>
         <img src="./photos/e.PNG"></img>
         <img src="./photos/f.PNG"></img>
+        <img src="./photos/g.PNG"></img>
     </details>
     
 <ul>
