@@ -19,7 +19,7 @@
             </ul> <br>
     <details>
         <summary>UML Diagram</summary>
-        <img src="https://github.com/EnesBirol/hrms-project-react/blob/master/photos/0.png"></img>
+        <img src="./photos/0.png"></img>
     </details>
     <hr />
     <details>
